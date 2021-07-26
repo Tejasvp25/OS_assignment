@@ -19,21 +19,21 @@ char buffer[30] = "Shared Memory";
 char msg[30];
 
 /**
-* patientWaiting - Will be Initialized tp 0
-* treatmentDone - Will be Initialized tp 0
-* docAvailable - Will be Initialized tp 1
+* patientWaiting - Will be Initialized to 0
+* treatmentDone - Will be Initialized to 0
+* docAvailable - Will be Initialized to 1
 */
 sem_t patientWaiting, treatmentDone, docAvailable;
 
 pthread_t docThread, patientThread;
 
-// Wrapper function fro sem_post()
+// Wrapper function for sem_post()
 void up(sem_t *sem)
 {
     sem_post(sem);
 }
 
-// Wrapper function fro sem_wait()
+// Wrapper function for sem_wait()
 void down(sem_t *sem)
 {
     sem_wait(sem);
